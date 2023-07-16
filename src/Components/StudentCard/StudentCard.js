@@ -1,6 +1,5 @@
 import "./StudentCard.scss";
-import { Card } from "react-bootstrap";
-import { nanoid } from "nanoid";
+import { Card, ListGroup } from "react-bootstrap";
 
 const StudentCard = ({ student }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } =
@@ -17,27 +16,29 @@ const StudentCard = ({ student }) => {
   const average = total / numericGrades.length;
 
   return (
-    <Card>
-      <Card.Header>
+    <section className="StudentCard-container">
+      <Card className="StudentCard-card">
         <Card.Img
-          className="student-image"
+          className="StudentCard-image"
           src={pic}
           alt={`${firstName} ${lastName}`}
         />
-        <h3>
-          {id}: {firstName} {lastName}
-        </h3>
-        <h4>{email}</h4>
-      </Card.Header>
-      <Card.Body>
-        <ul>
-          <li>City: {city}</li>
-          <li>company: {company}</li>
-          <li>skill: {skill}</li>
-          <li>Average: {average}%</li>
-        </ul>
-      </Card.Body>
-    </Card>
+        <Card.Header className="StudentCard-header">
+          <h3>
+            {firstName} {lastName}
+          </h3>
+          <h4>{email}</h4>
+        </Card.Header>
+        <Card.Body className="StudentCard-body">
+          <ListGroup className="StudentCard-info">
+            <ListGroup.Item>City: {city}</ListGroup.Item>
+            <ListGroup.Item>company: {company}</ListGroup.Item>
+            <ListGroup.Item>skill: {skill}</ListGroup.Item>
+            <ListGroup.Item>Average: {average}%</ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </section>
   );
 };
 

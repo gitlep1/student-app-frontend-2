@@ -1,0 +1,36 @@
+.StudentCard-container {
+  .StudentCard-card {
+    border: 3px solid black;
+    border-radius: 1em;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1em;
+    margin-bottom: 3em;
+
+    .StudentCard-image {
+      width: 150px;
+      box-shadow: 5px 5px 12px 5px black;
+    }
+
+    .StudentCard-header {
+      background-color: white;
+      box-shadow: 5px 5px 12px 5px black;
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .StudentCard-body {
+      grid-column: 1 / -1;
+      background-color: peachpuff;
+      border-radius: 1em;
+      text-align: center;
+
+      .StudentCard-info {
+        list-style-type: none;
+        box-shadow: 5px 5px 12px 5px black;
+      }
+    }
+  }
+}

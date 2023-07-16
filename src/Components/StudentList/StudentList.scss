@@ -1,7 +1,7 @@
-.StudentList-Container {
-  border: 5px solid red;
-
-  .student-image {
-    width: 150px;
-  }
+.StudentList-container {
+  // border: 5px solid red;
+  width: 60vw;
+  height: 80vh;
+  overflow-y: scroll;
+  // background-color: #fff;
 }

@@ -5,7 +5,7 @@ import StudentCard from "../StudentCard/StudentCard";
 
 const StudentList = ({ studentData }) => {
   return (
-    <section className="StudentList-Container">
+    <section className="StudentList-container">
       <h2>StudentList</h2>
       {studentData.map((student) => {
         return <StudentCard key={nanoid()} student={student} />;
