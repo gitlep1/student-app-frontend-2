@@ -1,5 +1,4 @@
 import "./StudentList.scss";
-import { Card } from "react-bootstrap";
 import { nanoid } from "nanoid";
 import StudentCard from "../StudentCard/StudentCard";
 
