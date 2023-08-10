@@ -6,10 +6,13 @@
     grid-template-columns: 150px 1fr;
     gap: 1em;
     margin-bottom: 3em;
+    background-color: #1b1b1b;
 
     .StudentCard-image {
       width: 150px;
       box-shadow: 5px 5px 12px 5px black;
+      background-color: white;
+      border-radius: 1em;
     }
 
     .StudentCard-header {
@@ -23,13 +26,21 @@
 
     .StudentCard-body {
       grid-column: 1 / -1;
-      background-color: peachpuff;
+      // background-color: peachpuff;
       border-radius: 1em;
       text-align: center;
 
       .StudentCard-info {
         list-style-type: none;
         box-shadow: 5px 5px 12px 5px black;
+      }
+
+      .StudentCard-button {
+        width: 100%;
+        border: none;
+        padding: none;
+        background: none;
+        font-size: 24px;
       }
     }
   }

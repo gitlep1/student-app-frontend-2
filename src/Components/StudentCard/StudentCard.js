@@ -1,7 +1,12 @@
+import { useState } from "react";
 import "./StudentCard.scss";
-import { Card, ListGroup } from "react-bootstrap";
+import { Button, Card, ListGroup } from "react-bootstrap";
+import { nanoid } from "nanoid";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const StudentCard = ({ student }) => {
+  const [expanded, setExpanded] = useState(false);
+
   const { city, company, email, firstName, grades, id, lastName, pic, skill } =
     student;
 
@@ -36,6 +41,29 @@ const StudentCard = ({ student }) => {
             <ListGroup.Item>skill: {skill}</ListGroup.Item>
             <ListGroup.Item>Average: {average}%</ListGroup.Item>
           </ListGroup>
+          <br />
+
+          {expanded && (
+            <ListGroup className="StudentCard-grades">
+              {grades.map((grade, index) => (
+                <ListGroup.Item
+                  key={nanoid()}
+                  style={{
+                    color: grade < 80 ? "red" : "green",
+                  }}
+                >
+                  Test: {index + 1} {grade}%
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          )}
+          <Button
+            className="StudentCard-button"
+            onClick={() => setExpanded(!expanded)}
+            variant="dark"
+          >
+            {expanded ? <FaMinus /> : <FaPlus />}
+          </Button>
         </Card.Body>
       </Card>
     </section>
