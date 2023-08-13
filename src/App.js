@@ -43,10 +43,7 @@ const App = () => {
 
   return (
     <section className="App-container">
-      {/* <Container> 
-        
-      </Container */}
-      <Container center={Boolean(error || loading)}>
+      <Container center={Boolean(error || loading)} scroll={false}>
         {renderContent()}
       </Container>
     </section>

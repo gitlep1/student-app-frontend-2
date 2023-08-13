@@ -4,9 +4,7 @@ import { Button, Card, ListGroup } from "react-bootstrap";
 import { nanoid } from "nanoid";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-const StudentCard = ({ student }) => {
-  const [expanded, setExpanded] = useState(false);
-
+const StudentCard = ({ student, expanded, onClick }) => {
   const { city, company, email, firstName, grades, id, lastName, pic, skill } =
     student;
 
@@ -59,7 +57,7 @@ const StudentCard = ({ student }) => {
           )}
           <Button
             className="StudentCard-button"
-            onClick={() => setExpanded(!expanded)}
+            onClick={onClick}
             variant="dark"
           >
             {expanded ? <FaMinus /> : <FaPlus />}
